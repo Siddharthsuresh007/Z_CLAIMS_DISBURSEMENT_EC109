@@ -1,0 +1,26 @@
+unmanaged implementation in class zcl_claims_handler unique;
+strict ( 2 );
+
+define behavior for ZI_ClaimsAuto alias Claim
+// Add these two lines to fix the errors:
+lock master
+authorization master ( instance )
+{
+  create;
+  update;
+  delete;
+
+  action postToFSCD result [1] $self;
+
+  mapping for zclaims_auto
+  {
+    ClaimUuid = claim_uuid;
+    ClaimId = claim_id;
+    PolicyId = policy_id;
+    Partner = partner;
+    Amount = amount;
+    Currency = currency;
+    FSCDDocNo = fscd_doc_no;
+    Status = status;
+  }
+}

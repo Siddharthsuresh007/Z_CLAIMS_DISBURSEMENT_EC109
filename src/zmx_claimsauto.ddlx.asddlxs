@@ -1,0 +1,53 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Claim', 
+                typeNamePlural: 'Claims', 
+                title: { type: #STANDARD, value: 'ClaimId' } }
+}
+annotate view ZI_ClaimsAuto with 
+{
+  @UI.facet: [
+    { id: 'idIdentification', 
+      type: #IDENTIFICATION_REFERENCE, 
+      label: 'Claim Information', 
+      position: 10 }
+  ]
+
+  @UI.hidden: true
+  ClaimUuid;
+
+  @UI.lineItem: [ { position: 10, label: 'Claim ID' },
+                  { type: #FOR_ACTION, dataAction: 'posttofscd', label: 'Post to FS-CD' } ]
+  @UI.identification: [ { position: 10, label: 'Claim ID' } ]
+  @EndUserText.label: 'Claim ID'
+  ClaimId;
+
+  @UI.lineItem: [ { position: 20, label: 'Policy ID' } ]
+  @UI.identification: [ { position: 20, label: 'Policy ID' } ]
+  @EndUserText.label: 'Policy ID'
+  PolicyId;
+
+  @UI.lineItem: [ { position: 30, label: 'Business Partner' } ]
+  @UI.identification: [ { position: 30, label: 'Business Partner' } ]
+  @EndUserText.label: 'Business Partner'
+  Partner;
+
+  @UI.lineItem: [ { position: 40, label: 'Amount' } ]
+  @UI.identification: [ { position: 40, label: 'Amount' } ]
+  @EndUserText.label: 'Amount'
+  Amount;
+
+  @UI.identification: [ { position: 50, label: 'Currency' } ]
+  @EndUserText.label: 'Currency'
+  Currency;
+
+  @UI.lineItem: [ { position: 60, label: 'FS-CD Doc' } ]
+  @UI.identification: [ { position: 60, label: 'FS-CD Doc' } ]
+  @EndUserText.label: 'FS-CD Doc Number'
+  FSCDDocNo;
+
+  @UI.lineItem: [ { position: 70, label: 'Status' } ]
+  @UI.identification: [ { position: 70, label: 'Status' } ]
+  @EndUserText.label: 'Processing Status'
+  Status;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Claims'
+define service ZUI_CLAIMS_AUTO_V4 {
+  expose ZI_ClaimsAuto as Claims;
+}

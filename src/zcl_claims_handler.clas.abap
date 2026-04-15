@@ -1,0 +1,5 @@
+CLASS zcl_claims_handler DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_claimsauto.
+ENDCLASS.
+
+CLASS zcl_claims_handler IMPLEMENTATION.
+ENDCLASS.
